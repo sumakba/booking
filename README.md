@@ -1,2 +1,2 @@
 # booking
-Php booking system
+Php rezervasyon sınıfı. Henüz veritabanı işlemlerini kapsamamaktadır.

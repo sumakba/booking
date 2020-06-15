@@ -1,7 +1,5 @@
 <?php
 
-use function PHPSTORM_META\type;
-
 class Reservation {
     private $resId;
     private $clientId;
@@ -35,7 +33,7 @@ class Reservation {
         return $this->status;
     }
     public function getSessions(){
-        return var_dump(self::$sessions);
+        return self::$sessions;
     }
     public function getCreatedAt(){
         return $this->created_at;
@@ -83,8 +81,5 @@ class Reservation {
         self::$sessions = NULL;
     }
 }
-
-$reservation = new Reservation(1, 12, 23424, 1, [1,3,4], date("H:i:s"));
-$reservation->getSessions();
 
 ?>

@@ -54,6 +54,10 @@ class Reservation {
         unset(self::$sessions[$sessionId]);
         return self::$sessions;
     }
+    public function changeStatus(bool $status){
+        $this->status = $status;
+        return $this->status;
+    }
     public function changeReservation($oldSessionId,$newSessionId){
         if(array_key_exists($oldSessionId,self::$sessions) & array_key_exists($newSessionId,self::$sessions)){
             $arr[$oldSessionId] = $newSessionId;

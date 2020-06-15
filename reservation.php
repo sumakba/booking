@@ -3,17 +3,15 @@
 class Reservation {
     private $resId;
     private $clientId;
-    private $bookingNo;
     private $status;
     private $created_at;
     public static $sessions;
-    public function __construct($resId,$clientId,$bookingNo,$status,$sessions = array(),$created_at)
+    public function __construct($clientId,$status,$sessions = array(),$created_at)
     {
         date_default_timezone_set('Europe/Istanbul');
         ini_set('default_charset','utf-8');
-        $this->resId = $resId;
+        $this->resId = substr(md5(rand(1,100)),0,10);
         $this->clientId = $clientId;
-        $this->bookingNo = $bookingNo;
         $this->status = $status;
         $this->created_at = $created_at;
         self::$sessions = $sessions;
@@ -25,9 +23,6 @@ class Reservation {
     }
     public function getClientId(){
         return $this->clientId;
-    }
-    public function getBookingNo(){
-        return $this->bookingNo;
     }
     public function getStatus(){
         return $this->status;
